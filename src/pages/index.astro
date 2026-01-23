@@ -82,7 +82,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                     </div>
                 ))}
                 <div class="mini-job-card" style="--job-accent: #666">
-                    <div class="company-name" style="color: #888">Radware, Wipro...</div>
+                    <div class="company-name" style="color: #888">Radware, Wipro, M.TECH</div>
                     <div class="role-name">Previous Roles</div>
                     <div class="job-highlight">Foundational experience in Network Security & Presales.</div>
                 </div>
@@ -145,7 +145,6 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     }
 
     /* --- MAIN LAYOUT (FLEX COLUMN) --- */
-    /* This forces rows to stack vertically, preventing overlap */
     .main-wrapper {
         max-width: 1400px;
         margin: 0 auto;
@@ -156,6 +155,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         justify-content: center;
         gap: 2rem; /* Vertical space between rows */
         width: 100%;
+        box-sizing: border-box; /* Ensure padding doesn't affect width calculations */
     }
 
     /* --- ROW 1: GRID (3:1) --- */
@@ -163,6 +163,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         display: grid;
         grid-template-columns: 3fr 1fr;
         gap: 2rem;
+        width: 100%;
     }
 
     /* --- ROW 3: GRID (1:1) --- */
@@ -170,6 +171,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2rem;
+        width: 100%;
     }
 
     /* --- CARD BASE --- */
@@ -184,6 +186,8 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         display: flex;
         flex-direction: column;
+        width: 100%; /* Force all cards to take full available width of their container */
+        box-sizing: border-box; /* Crucial for alignment */
     }
     .bento-card:hover {
         border-color: rgba(255, 255, 255, 0.2);
@@ -234,7 +238,11 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     .glow-effect { position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; background: var(--accent); filter: blur(60px); opacity: 0.4; }
 
     /* --- TIMELINE CARD --- */
-    .timeline-card { width: 100%; }
+    /* Ensure this card takes up full width of the parent flex container */
+    .timeline-card { 
+        width: 100%; 
+        box-sizing: border-box;
+    }
     .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
     .mini-job-card { 
         padding: 1.2rem; 
