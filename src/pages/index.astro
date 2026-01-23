@@ -1,125 +1,315 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-// You can easily update your data here without touching the HTML below
 const experience = [
   {
     role: "Senior Solutions Engineer",
     company: "Cloudflare",
-    period: "February 2022 – Present",
+    period: "Feb 2022 – Present",
+    color: "#F6821F", // Cloudflare Orange
     details: [
       "First SE hired to build and scale Cloudflare's technical footprint in India.",
       "Architect secure, scalable solutions by mapping customer initiatives to modern Cloudflare architectures.",
-      "Drive technical strategy with engineering leaders and C-suite stakeholders.",
-      "Lead demos, deep-dives, and POCs end-to-end to accelerate adoption."
+      "Drive technical strategy with engineering leaders and C-suite stakeholders."
     ]
   },
   {
-    role: "Solutions Engineer II – South",
+    role: "Solutions Engineer II",
     company: "F5 Networks",
-    period: "February 2020 – February 2022",
+    period: "Feb 2020 – Feb 2022",
+    color: "#E83D43", // F5 Red
     details: [
       "Delivered technical leadership across solution designs, demos, and POCs.",
-      "Architected advanced F5 configurations enabling new services and solving complex issues.",
-      "Positioned F5 competitively with differentiated architectures and CXO-level value messaging."
+      "Architected advanced F5 configurations enabling new services and solving complex issues."
     ]
   },
   {
-    role: "Presales Systems Engineer – South",
+    role: "Presales Systems Engineer",
     company: "Infoblox",
-    period: "June 2019 – February 2020",
+    period: "June 2019 – Feb 2020",
+    color: "#27AE60", // Infoblox Green
     details: [
       "Drove technical differentiation in sales cycles by educating customers on DDI and security solutions.",
-      "Created high-quality presales content to accelerate solution adoption.",
-      "Designed end-to-end architectures illustrating Infoblox integration with enterprise security."
+      "Designed end-to-end architectures illustrating Infoblox integration."
     ]
   },
   {
     role: "SOCC Specialist – Senior",
-    company: "Akamai Technologies",
-    period: "August 2017 – June 2019",
+    company: "Akamai",
+    period: "Aug 2017 – June 2019",
+    color: "#0099CC", // Akamai Blue
     details: [
       "Protected global customers against DDoS and web attacks using Prolexic and KONA WAF.",
-      "Served as global Product Line Expert for Bot Manager and SME for Akamai Platform.",
-      "Delivered real-time attack support—analysing patterns and crafting mitigation policies."
+      "Served as global Product Line Expert for Bot Manager."
     ]
   }
 ];
 
 const skills = [
-  "WAF & DDoS Mitigation", "Zero Trust Architecture", "CDN & Edge Performance",
-  "Programmable Edge", "DDI (DNS/DHCP/IPAM)", "SOC Operations",
-  "Application Defense", "APM & Diagnostics", "Network Troubleshooting"
+  "WAF & DDoS Mitigation", "Zero Trust", "CDN & Edge",
+  "Programmable Edge", "DNS/DHCP/IPAM", "SOC Operations",
+  "App Defense", "Network Troubleshooting"
 ];
 ---
 
-<Layout title="Tharun Raj — Senior Solutions Engineer">
-	<main style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
-		
-		<header style="margin-bottom: 3rem; border-bottom: 1px solid #333; padding-bottom: 2rem;">
-			<h1 style="font-size: 2.5rem; margin: 0 0 0.5rem 0;">Tharun Raj</h1>
-			<h2 style="font-size: 1.5rem; color: #aaa; margin: 0 0 1rem 0;">Senior Solutions Engineer — Cloudflare</h2>
-			<div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: #888;">
-				<span>Cloud & Edge</span>
-				<span>Application Security</span>
-				<span>Presales Leadership</span>
-				<span>DDoS & WAF</span>
-			</div>
-			<div style="margin-top: 1.5rem;">
-				<a href="https://www.linkedin.com/in/tharunraj/" target="_blank" style="margin-right: 1rem;">LinkedIn</a>
-				<a href="mailto:contact@tharunraj.co.in">Contact</a>
-			</div>
-		</header>
+<Layout title="Tharun Raj | Senior Solutions Engineer">
+	<div class="bg-gradient-1"></div>
+	<div class="bg-gradient-2"></div>
 
-		<section style="margin-bottom: 3rem;">
-			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Professional Summary</h3>
-			<p>
-				Senior Solutions Engineer with 16+ years in application security, cloud networking, and presales leadership. Expert in architecting enterprise-grade solutions, driving technical strategy, and influencing C-suite outcomes across large accounts. Proven track record across Cloudflare, F5, Akamai, Infoblox, and Radware.
-			</p>
+	<main class="container">
+		
+		<section class="hero">
+			<div class="hero-content fade-in-up">
+				<div class="badge">Senior Solutions Engineer</div>
+				<h1>Tharun Raj</h1>
+				<h2 class="typing-effect">Building the Secure Cloud.</h2>
+				<p class="summary">
+					16+ years in application security & cloud networking. Expert in architecting enterprise-grade solutions and influencing C-suite outcomes.
+				</p>
+				<div class="cta-group">
+					<a href="mailto:contact@tharunraj.co.in" class="btn primary">Contact Me</a>
+					<a href="https://www.linkedin.com/in/tharunraj/" target="_blank" class="btn secondary">LinkedIn</a>
+				</div>
+			</div>
+			
+			<div class="hero-image fade-in-delayed">
+				<div class="image-wrapper">
+					<img src="/profile.jpg" alt="Tharun Raj" onerror="this.src='https://ui-avatars.com/api/?name=Tharun+Raj&background=random&size=512'" />
+				</div>
+			</div>
 		</section>
 
-		<section style="margin-bottom: 3rem;">
-			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Experience</h3>
-			<div style="display: flex; flex-direction: column; gap: 2rem;">
-				{experience.map((job) => (
-					<div>
-						<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
-							<h4 style="margin: 0; font-size: 1.2rem;">{job.role}</h4>
-							<span style="color: #888; font-size: 0.9rem;">{job.period}</span>
+		<section class="experience">
+			<h3 class="section-title">Professional Journey</h3>
+			<div class="timeline">
+				{experience.map((job, index) => (
+					<div class="card" style={`--accent-color: ${job.color}; animation-delay: ${index * 100}ms`}>
+						<div class="card-header">
+							<div>
+								<h4>{job.role}</h4>
+								<span class="company" style={`color: ${job.color}`}>{job.company}</span>
+							</div>
+							<span class="period">{job.period}</span>
 						</div>
-						<div style="color: #4caf50; margin-bottom: 0.5rem;">{job.company}</div>
-						<ul style="padding-left: 1.2rem; margin: 0; color: #ccc;">
-							{job.details.map((detail) => (
-								<li style="margin-bottom: 0.5rem;">{detail}</li>
-							))}
+						<ul class="job-details">
+							{job.details.map((d) => <li>{d}</li>)}
 						</ul>
 					</div>
 				))}
 			</div>
 		</section>
 
-		<section style="margin-bottom: 3rem;">
-			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Core Skills</h3>
-			<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
-				{skills.map((skill) => (
-					<span style="background: #222; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid #333;">
-						{skill}
-					</span>
+		<section class="skills">
+			<h3 class="section-title">Core Competencies</h3>
+			<div class="skill-grid">
+				{skills.map((skill, index) => (
+					<div class="skill-tag" style={`animation-delay: ${index * 50}ms`}>{skill}</div>
 				))}
 			</div>
 		</section>
 
-		<section>
-			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Education</h3>
-			<div style="margin-bottom: 1rem;">
-				<strong>BS — Information Systems</strong><br/>
-				<span style="color: #aaa;">Birla Institute of Technologies and Science</span>
-			</div>
-            <div>
-				<strong>BSc — Information Technology</strong><br/>
-				<span style="color: #aaa;">Kuvempu University</span>
-			</div>
-		</section>
-
 	</main>
+
+    <footer>
+        <p>&copy; {new Date().getFullYear()} Tharun Raj. Built with <span style="color: #F6821F">Astro</span> on <span style="color: #F6821F">Cloudflare</span>.</p>
+    </footer>
 </Layout>
+
+<style>
+	/* LAYOUT UTILS */
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 2rem;
+		position: relative;
+		z-index: 10;
+	}
+
+	/* ANIMATIONS */
+	@keyframes fadeInUp {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+	
+	.fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+	.fade-in-delayed { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity: 0; }
+	.card { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+	.skill-tag { animation: fadeInUp 0.5s ease-out forwards; opacity: 0; }
+
+	/* HERO */
+	.hero {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		gap: 4rem;
+		min-height: 80vh;
+		padding-bottom: 4rem;
+	}
+	.badge {
+		background: rgba(255, 255, 255, 0.1);
+		color: var(--text-muted);
+		padding: 0.5rem 1rem;
+		border-radius: 50px;
+		font-size: 0.85rem;
+		display: inline-block;
+		margin-bottom: 1.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	h1 {
+		font-size: 4rem;
+		line-height: 1.1;
+		margin: 0 0 1rem 0;
+		background: linear-gradient(to right, #fff, #aaa);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-weight: 800;
+	}
+	h2 {
+		font-size: 1.8rem;
+		color: var(--text-muted);
+		font-weight: 400;
+		margin: 0 0 2rem 0;
+	}
+	.summary {
+		font-size: 1.1rem;
+		color: #888;
+		max-width: 90%;
+		margin-bottom: 2.5rem;
+	}
+
+	/* BUTTONS */
+	.cta-group { display: flex; gap: 1rem; }
+	.btn {
+		padding: 0.8rem 2rem;
+		border-radius: 8px;
+		font-weight: 600;
+		transition: all 0.2s ease;
+		text-align: center;
+	}
+	.btn.primary {
+		background: white;
+		color: black;
+	}
+	.btn.primary:hover {
+		background: #ddd;
+		transform: translateY(-2px);
+	}
+	.btn.secondary {
+		background: transparent;
+		border: 1px solid #333;
+		color: white;
+	}
+	.btn.secondary:hover {
+		border-color: white;
+		background: rgba(255,255,255,0.05);
+	}
+
+	/* HERO IMAGE */
+	.image-wrapper {
+		position: relative;
+		width: 350px;
+		height: 350px;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 4px solid rgba(255,255,255,0.1);
+		box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        margin: 0 auto;
+	}
+	.image-wrapper img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	/* CARDS */
+	.section-title {
+		font-size: 1.5rem;
+		border-bottom: 1px solid #333;
+		padding-bottom: 1rem;
+		margin-bottom: 2rem;
+		color: #fff;
+	}
+	.timeline {
+		display: grid;
+		gap: 1.5rem;
+	}
+	.card {
+		background: var(--card-bg);
+		border: 1px solid rgba(255,255,255,0.05);
+		padding: 2rem;
+		border-radius: 12px;
+		transition: transform 0.2s, box-shadow 0.2s;
+	}
+	.card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+		border-color: rgba(255,255,255,0.1);
+	}
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1rem;
+	}
+	.card h4 { margin: 0; font-size: 1.25rem; }
+	.company { font-weight: 600; font-size: 0.95rem; display: block; margin-top: 0.25rem; }
+	.period { font-size: 0.85rem; color: #666; background: rgba(255,255,255,0.05); padding: 0.2rem 0.6rem; border-radius: 4px; }
+	.job-details { padding-left: 1.2rem; color: #aaa; font-size: 0.95rem; }
+	.job-details li { margin-bottom: 0.5rem; }
+
+	/* SKILLS */
+	.skill-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	.skill-tag {
+		background: rgba(255,255,255,0.05);
+		padding: 0.6rem 1.2rem;
+		border-radius: 6px;
+		font-size: 0.9rem;
+		color: #ddd;
+		border: 1px solid transparent;
+		transition: all 0.3s;
+	}
+	.skill-tag:hover {
+		background: rgba(255,255,255,0.1);
+		border-color: rgba(255,255,255,0.2);
+		transform: scale(1.05);
+	}
+
+	/* DECORATION */
+	.bg-gradient-1 {
+		position: absolute;
+		top: -10%;
+		right: -10%;
+		width: 600px;
+		height: 600px;
+		background: radial-gradient(circle, rgba(29, 78, 216, 0.15), transparent 70%);
+		z-index: 1;
+		pointer-events: none;
+	}
+	.bg-gradient-2 {
+		position: absolute;
+		bottom: 10%;
+		left: -10%;
+		width: 500px;
+		height: 500px;
+		background: radial-gradient(circle, rgba(136, 58, 234, 0.15), transparent 70%);
+		z-index: 1;
+		pointer-events: none;
+	}
+    
+    footer { text-align: center; padding: 4rem 0; color: #555; font-size: 0.9rem; }
+
+	/* RESPONSIVE */
+	@media (max-width: 768px) {
+		.hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+		.hero-content { order: 2; }
+		.hero-image { order: 1; display: flex; justify-content: center; }
+		.image-wrapper { width: 200px; height: 200px; }
+		h1 { font-size: 2.5rem; }
+		.cta-group { justify-content: center; }
+		.card-header { flex-direction: column; gap: 0.5rem; }
+	}
+</style>
