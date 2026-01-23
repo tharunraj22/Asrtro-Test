@@ -7,8 +7,7 @@ const experience = [
   { role: "Solutions Engineer II", company: "F5 Networks", period: "2020 – 2022", color: "#E83D43", highlight: "Architected advanced configurations for complex issues." },
   { role: "Presales Systems Engineer", company: "Infoblox", period: "2019 – 2020", color: "#27AE60", highlight: "Drove technical differentiation for DDI & security." },
   { role: "SOCC Specialist – Senior", company: "Akamai", period: "2017 – 2019", color: "#0099CC", highlight: "Global DDoS/WAF protection & Bot Manager SME." },
-  // Older roles condensed for impact
-  { role: "Previous Roles", company: "Radware, Wipro, M.TECH", period: "2009 – 2017", color: "#666", highlight: "Foundational experience in Network Security, Load Balancing, and Pre-sales leadership." }
+  { role: "Previous Roles", company: "Radware, Wipro, M.TECH", period: "2009 – 2017", color: "#666", highlight: "Foundational experience in Network Security, Load Balancing, and Pre-sales." }
 ];
 
 const skillsHighlihgts = ["Zero Trust Architecture", "WAF & DDoS Mitigation", "CDN & Edge Computing", "C-Suite Presales", "Solution Architecture"];
@@ -37,11 +36,11 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                         <span>Email</span>
                     </button>
                     
-                    <a href="https://www.linkedin.com/in/tharunr/" target="_blank" class="btn btn-secondary">
+                    <a href="https://www.linkedin.com/in/tharunr/" target="_blank" class="btn btn-secondary" aria-label="LinkedIn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                     </a>
 
-                    <a href="https://github.com/tharunraj22" target="_blank" class="btn btn-secondary">
+                    <a href="https://github.com/tharunraj22" target="_blank" class="btn btn-secondary" aria-label="GitHub">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     </a>
                 </div>
@@ -55,7 +54,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         <div class="bento-card focus-card" style="grid-area: focus; --accent: #F6821F;">
             <div class="card-label">Current Focus</div>
             <div class="focus-content">
-                <svg viewBox="0 0 48 24" fill="white" style="height: 32px; opacity: 0.9; margin-bottom: 0.8rem;">
+                 <svg viewBox="0 0 48 24" fill="white" style="height: 32px; opacity: 0.9; margin-bottom: 0.8rem;">
                     <path d="M34.6 10.6c-0.6-2.6-3.2-4.6-6.1-4.6 -1.8 0-3.5 0.8-4.7 2.1C23 4 19.3 4 16.5 6.3c-2.6-1.5-6-0.8-7.7 1.7c-0.1 0.2-0.3 0.4-0.4 0.6C3.9 9 0 12.3 0 16.8C0 20.8 3.2 24 7.2 24h27.4c4 0 7.2-3.2 7.2-7.2 C41.8 13.2 38.8 10.6 34.6 10.6z"/>
                 </svg>
                 <h3>Senior Solutions Engineer</h3>
@@ -64,28 +63,33 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
             <div class="glow-effect"></div>
         </div>
 
-        <div class="bento-card skills-card" style="grid-area: skills;">
-            <div class="card-label">Expertise Toolkit</div>
-            <div class="top-skills">
-                {skillsHighlihgts.map(skill => <span class="skill-pill highlight">{skill}</span>)}
-            </div>
-            <div class="other-skills">
-                {skillsAll.map(skill => <span class="skill-pill">{skill}</span>)}
-            </div>
-        </div>
-
         <div class="bento-card timeline-card" style="grid-area: timeline;">
             <div class="card-header-row">
                 <div class="card-label">Career Velocity</div>
             </div>
             <div class="timeline-grid">
-                {experience.slice(1).map(job => (
+                {experience.slice(0, 4).map(job => (
                     <div class="mini-job-card" style={`--job-accent: ${job.color}`}>
                         <div class="company-name" style={`color: ${job.color}`}>{job.company}</div>
                         <div class="role-name">{job.role}</div>
                         <div class="job-highlight">{job.highlight}</div>
                     </div>
                 ))}
+                 <div class="mini-job-card" style="--job-accent: #666">
+                    <div class="company-name" style="color: #888">Radware, Wipro...</div>
+                    <div class="role-name">Previous Roles</div>
+                    <div class="job-highlight">Foundational experience in Network Security & Presales.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-card skills-card" style="grid-area: skills;">
+            <div class="card-label">Expertise Toolkit</div>
+            <div class="top-skills">
+                {skillsHighlihgts.map(skill => <span class="skill-pill highlight">{skill}</span>)}
+            </div>
+            <div class="other-skills">
+                {skillsAll.slice(0, 6).map(skill => <span class="skill-pill">{skill}</span>)}
             </div>
         </div>
 
@@ -102,7 +106,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     <div id="toast" class="toast">Email copied to clipboard!</div>
 
     <footer>
-        <p>&copy; 2026 Built by Tharun with <a href="https://astro.build" target="_blank">Astro</a> on Cloudflare Pages.</p>
+        <p>&copy; {new Date().getFullYear()} Built by Tharun with <a href="https://astro.build" target="_blank">Astro</a> on Cloudflare Pages.</p>
     </footer>
 </Layout>
 
@@ -145,21 +149,22 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         justify-content: center;
     }
 
-    /* THE BENTO GRID LAYOUT ENGINE */
+    /* THE BENTO GRID LAYOUT ENGINE - REFACTORED FOR BALANCE */
     .bento-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto auto auto;
-        gap: 1.5rem;
-        width: 100%;
-        /* UPDATED LAYOUT (75% / 25%)
-           "hero" spans 3 columns (75%)
-           "focus" spans 1 column (25%)
+        /* Row 1: Hero (3 cols) + Focus (1 col)
+           Row 2: Timeline (4 cols - Full Width)
+           Row 3: Skills (2 cols) + Certs (2 cols)
         */
         grid-template-areas: 
             "hero hero hero focus"
-            "skills timeline timeline timeline"
-            "skills certs certs certs";
+            "timeline timeline timeline timeline"
+            "skills skills certs certs";
+        gap: 1.5rem;
+        width: 100%;
+        /* Ensure rows stretch to match content but keep relative proportions */
+        grid-auto-rows: minmax(min-content, auto);
     }
 
     /* --- BENTO CARD STYLES --- */
@@ -191,16 +196,19 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     .hero-card {
         flex-direction: row; align-items: center; justify-content: space-between;
         background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,50,0.8));
+        min-height: 320px; /* Enforce minimum height for balance */
     }
-    .hero-content { max-width: 65%; z-index: 2; }
+    .hero-content { max-width: 55%; z-index: 2; }
     .badge { display: inline-block; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1); }
     h1 { font-size: 3rem; margin: 0; font-weight: 800; letter-spacing: -1px; background: linear-gradient(to right, #fff, #ccc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     h2 { font-size: 1.25rem; color: #F6821F; margin: 0.5rem 0 1.5rem 0; font-weight: 500; }
-    .hero-card p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; max-width: 90%; line-height: 1.6; }
+    .hero-card p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; max-width: 95%; line-height: 1.6; }
     
     .hero-image-container {
-        position: absolute; right: 0; top: 0; bottom: 0; width: 35%;
-        mask-image: linear-gradient(to left, black 20%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 20%, transparent 100%);
+        position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
+        /* Softened the mask gradient so image is more visible */
+        mask-image: linear-gradient(to left, black 40%, transparent 100%); 
+        -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
     }
     .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center top;}
 
@@ -210,41 +218,61 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         padding: 0.8rem 1.2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
         display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; text-decoration: none; border: 1px solid transparent;
     }
-    .btn-primary {
-        background: linear-gradient(to bottom right, #eee, #ccc); color: #000;
-    }
+    .btn-primary { background: linear-gradient(to bottom right, #eee, #ccc); color: #000; }
     .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(255,255,255,0.5); }
-    
-    .btn-secondary {
-        background: rgba(255, 255, 255, 0.05); color: #fff; border-color: rgba(255, 255, 255, 0.1);
-    }
+    .btn-secondary { background: rgba(255, 255, 255, 0.05); color: #fff; border-color: rgba(255, 255, 255, 0.1); }
     .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); }
 
     /* --- FOCUS CARD (Area 2) --- */
-    .focus-card { background: linear-gradient(160deg, var(--card-bg), rgba(246, 130, 31, 0.15)); justify-content: center; align-items: flex-start;}
+    .focus-card { 
+        background: linear-gradient(160deg, var(--card-bg), rgba(246, 130, 31, 0.15)); 
+        justify-content: center; align-items: flex-start;
+        min-height: 320px; /* Match hero height */
+    }
     .focus-content h3 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
     .focus-content p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
     .glow-effect { position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; background: var(--accent); filter: blur(60px); opacity: 0.4; }
 
-    /* --- SKILLS CARD (Area 3) --- */
-    .skills-card { justify-content: center; }
-    .top-skills { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
-    .other-skills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-    .skill-pill { padding: 0.5rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.9rem; border: 1px solid var(--card-border); transition: all 0.2s; }
-    .skill-pill.highlight { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); font-weight: 600; color: #fff; }
-    .skill-pill:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
-
-    /* --- TIMELINE CARD (Area 4) --- */
-    .card-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-    .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-    .mini-job-card { padding: 1.2rem; background: rgba(0,0,0,0.2); border-radius: 12px; border-left: 3px solid var(--job-accent); transition: all 0.2s; }
+    /* --- TIMELINE CARD (Area 3 - Full Width) --- */
+    .timeline-card { }
+    .card-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    /* Grid for job cards - ensures they don't stretch weirdly */
+    .timeline-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+        gap: 1rem; 
+        width: 100%;
+    }
+    .mini-job-card { 
+        padding: 1.2rem; 
+        background: rgba(0,0,0,0.2); 
+        border-radius: 12px; 
+        border-left: 3px solid var(--job-accent); 
+        transition: all 0.2s; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 140px;
+    }
     .mini-job-card:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
     .company-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.3rem; }
     .role-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
     .job-highlight { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
 
-    /* --- CERTS CARD (Area 5) --- */
-    .cert-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    /* --- SKILLS CARD (Area 4 - Half Width) --- */
+    .skills-card { justify-content: flex-start; }
+    .top-skills { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.5rem; }
+    .other-skills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .skill-pill { padding: 0.4rem 0.8rem; background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.85rem; border: 1px solid var(--card-border); transition: all 0.2s; }
+    .skill-pill.highlight { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); font-weight: 600; color: #fff; }
+    .skill-pill:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+    /* --- CERTS CARD (Area 5 - Half Width) --- */
+    .certs-card { justify-content: flex-start; }
+    .cert-list { 
+        list-style: none; padding: 0; margin: 0; 
+        display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; 
+    }
     .cert-list li { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.95rem; }
     .cert-list li::before { content: '🏆'; font-size: 1.1rem; }
 
@@ -267,17 +295,17 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     @media (max-width: 1024px) {
         .container { padding: 1rem; height: auto; display: block;}
         .bento-grid {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: "hero" "focus" "timeline" "skills" "certs";
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
-        .hero-card { flex-direction: column-reverse; padding: 0; overflow: hidden;}
+        .hero-card { flex-direction: column-reverse; padding: 0; overflow: hidden; min-height: auto; }
         .hero-image-container { position: relative; width: 100%; height: 300px; mask-image: none; -webkit-mask-image: none; }
         .hero-content { max-width: 100%; padding: 2rem; }
         h1 { font-size: 2.5rem; }
         .cta-row { justify-content: flex-start; }
-        .bento-card { padding: 1.5rem; }
-        .cert-list { grid-template-columns: 1fr; } /* Stack certs on mobile */
+        .bento-card { padding: 1.5rem; min-height: auto; }
+        .cert-list { grid-template-columns: 1fr; }
+        .timeline-grid { grid-template-columns: 1fr; }
     }
 </style>
