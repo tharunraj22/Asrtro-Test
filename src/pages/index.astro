@@ -63,16 +63,9 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         <div class="bento-card timeline-card" style="grid-area: timeline;">
             <div class="card-header-row">
                 <div class="card-label">Career Velocity</div>
-                <div class="profile-links">
-                    <a href="https://github.com/tharunraj22" target="_blank" class="profile-link github">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                        GitHub
-                    </a>
-                    <a href="https://www.linkedin.com/in/tharunraj/" target="_blank" class="profile-link linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                        LinkedIn
-                    </a>
-                </div>
+                <a href="https://www.linkedin.com/in/tharunraj/" target="_blank" class="linkedin-link">
+                    View Full Profile <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
             </div>
             <div class="timeline-grid">
                 {experience.slice(1).map(job => (
@@ -223,13 +216,10 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     .skill-pill.highlight { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); font-weight: 600; color: #fff; }
     .skill-pill:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
 
-    /* TIMELINE CARD (Area 4) - UPDATED */
-    .card-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;}
-    .profile-links { display: flex; gap: 0.8rem; }
-    .profile-link { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 6px; transition: all 0.2s; padding: 6px 10px; border-radius: 6px; background: rgba(255,255,255,0.03); border: 1px solid transparent;}
-    .profile-link:hover { color: #fff; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.1); transform: translateY(-2px);}
-    .profile-link.linkedin:hover { color: #0077B5; }
-    
+    /* TIMELINE CARD (Area 4) */
+    .card-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .linkedin-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .linkedin-link:hover { color: #F6821F; }
     .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
     .mini-job-card { padding: 1.2rem; background: rgba(0,0,0,0.2); border-radius: 12px; border-left: 3px solid var(--job-accent); transition: all 0.2s; }
     .mini-job-card:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
@@ -278,8 +268,8 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
             grid-template-areas: 
                 "hero"
                 "focus"
-                "timeline" /* Moved timeline up for mobile */
                 "skills"
+                "timeline"
                 "certs"
                 "photo";
              gap: 1rem;
@@ -290,6 +280,5 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         h1 { font-size: 2.5rem; }
         .bento-card { padding: 1.5rem; }
         .profile-photo-card { display: none; /* Hide secondary photo on mobile to save space */ }
-        .card-label { margin-bottom: 1rem; }
     }
 </style>
