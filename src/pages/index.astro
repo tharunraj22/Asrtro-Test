@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// You can easily update your data here without touching the HTML below
+const experience = [
+  {
+    role: "Senior Solutions Engineer",
+    company: "Cloudflare",
+    period: "February 2022 – Present",
+    details: [
+      "First SE hired to build and scale Cloudflare's technical footprint in India.",
+      "Architect secure, scalable solutions by mapping customer initiatives to modern Cloudflare architectures.",
+      "Drive technical strategy with engineering leaders and C-suite stakeholders.",
+      "Lead demos, deep-dives, and POCs end-to-end to accelerate adoption."
+    ]
+  },
+  {
+    role: "Solutions Engineer II – South",
+    company: "F5 Networks",
+    period: "February 2020 – February 2022",
+    details: [
+      "Delivered technical leadership across solution designs, demos, and POCs.",
+      "Architected advanced F5 configurations enabling new services and solving complex issues.",
+      "Positioned F5 competitively with differentiated architectures and CXO-level value messaging."
+    ]
+  },
+  {
+    role: "Presales Systems Engineer – South",
+    company: "Infoblox",
+    period: "June 2019 – February 2020",
+    details: [
+      "Drove technical differentiation in sales cycles by educating customers on DDI and security solutions.",
+      "Created high-quality presales content to accelerate solution adoption.",
+      "Designed end-to-end architectures illustrating Infoblox integration with enterprise security."
+    ]
+  },
+  {
+    role: "SOCC Specialist – Senior",
+    company: "Akamai Technologies",
+    period: "August 2017 – June 2019",
+    details: [
+      "Protected global customers against DDoS and web attacks using Prolexic and KONA WAF.",
+      "Served as global Product Line Expert for Bot Manager and SME for Akamai Platform.",
+      "Delivered real-time attack support—analysing patterns and crafting mitigation policies."
+    ]
+  }
+];
+
+const skills = [
+  "WAF & DDoS Mitigation", "Zero Trust Architecture", "CDN & Edge Performance",
+  "Programmable Edge", "DDI (DNS/DHCP/IPAM)", "SOC Operations",
+  "Application Defense", "APM & Diagnostics", "Network Troubleshooting"
+];
+---
+
+<Layout title="Tharun Raj — Senior Solutions Engineer">
+	<main style="max-width: 800px; margin: 0 auto; padding: 2rem 1rem;">
+		
+		<header style="margin-bottom: 3rem; border-bottom: 1px solid #333; padding-bottom: 2rem;">
+			<h1 style="font-size: 2.5rem; margin: 0 0 0.5rem 0;">Tharun Raj</h1>
+			<h2 style="font-size: 1.5rem; color: #aaa; margin: 0 0 1rem 0;">Senior Solutions Engineer — Cloudflare</h2>
+			<div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: #888;">
+				<span>Cloud & Edge</span>
+				<span>Application Security</span>
+				<span>Presales Leadership</span>
+				<span>DDoS & WAF</span>
+			</div>
+			<div style="margin-top: 1.5rem;">
+				<a href="https://www.linkedin.com/in/tharunraj/" target="_blank" style="margin-right: 1rem;">LinkedIn</a>
+				<a href="mailto:contact@tharunraj.co.in">Contact</a>
+			</div>
+		</header>
+
+		<section style="margin-bottom: 3rem;">
+			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Professional Summary</h3>
+			<p>
+				Senior Solutions Engineer with 16+ years in application security, cloud networking, and presales leadership. Expert in architecting enterprise-grade solutions, driving technical strategy, and influencing C-suite outcomes across large accounts. Proven track record across Cloudflare, F5, Akamai, Infoblox, and Radware.
+			</p>
+		</section>
+
+		<section style="margin-bottom: 3rem;">
+			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Experience</h3>
+			<div style="display: flex; flex-direction: column; gap: 2rem;">
+				{experience.map((job) => (
+					<div>
+						<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap;">
+							<h4 style="margin: 0; font-size: 1.2rem;">{job.role}</h4>
+							<span style="color: #888; font-size: 0.9rem;">{job.period}</span>
+						</div>
+						<div style="color: #4caf50; margin-bottom: 0.5rem;">{job.company}</div>
+						<ul style="padding-left: 1.2rem; margin: 0; color: #ccc;">
+							{job.details.map((detail) => (
+								<li style="margin-bottom: 0.5rem;">{detail}</li>
+							))}
+						</ul>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section style="margin-bottom: 3rem;">
+			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Core Skills</h3>
+			<div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+				{skills.map((skill) => (
+					<span style="background: #222; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.9rem; border: 1px solid #333;">
+						{skill}
+					</span>
+				))}
+			</div>
+		</section>
+
+		<section>
+			<h3 style="text-transform: uppercase; color: #666; font-size: 0.85rem; letter-spacing: 1px;">Education</h3>
+			<div style="margin-bottom: 1rem;">
+				<strong>BS — Information Systems</strong><br/>
+				<span style="color: #aaa;">Birla Institute of Technologies and Science</span>
+			</div>
+            <div>
+				<strong>BSc — Information Technology</strong><br/>
+				<span style="color: #aaa;">Kuvempu University</span>
+			</div>
+		</section>
+
+	</main>
+</Layout>
