@@ -10,7 +10,7 @@ const experience = [
   { role: "Previous Roles", company: "Radware, Wipro, M.TECH", period: "2009 – 2017", color: "#666", highlight: "Foundational experience in Network Security, Load Balancing, and Pre-sales." }
 ];
 
-// Unified skills list (Removed the 'highlight' boolean to enforce uniform styling)
+// Unified skills list
 const skills = [
   "Zero Trust Architecture", "WAF & DDoS Mitigation", "CDN & Edge Computing",
   "C-Suite Presales", "Solution Architecture", "Programmable Edge",
@@ -26,10 +26,11 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
-	<main class="container fade-in">
-        <div class="bento-grid">
+	<main class="main-wrapper fade-in">
+        
+        <div class="grid-row-top">
             
-            <div class="bento-card hero-card" style="grid-area: hero;">
+            <div class="bento-card hero-card">
                 <div class="hero-content">
                     <div class="badge">16+ YOE / Senior Solutions Engineer</div>
                     <h1>Tharun Raj</h1>
@@ -41,11 +42,9 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                             <span>Email</span>
                         </button>
-                        
                         <a href="https://www.linkedin.com/in/tharunr/" target="_blank" class="btn btn-secondary" aria-label="LinkedIn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                         </a>
-
                         <a href="https://github.com/tharunraj22" target="_blank" class="btn btn-secondary" aria-label="GitHub">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                         </a>
@@ -56,7 +55,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                 </div>
             </div>
 
-            <div class="bento-card focus-card" style="grid-area: focus; --accent: #F6821F;">
+            <div class="bento-card focus-card">
                 <div class="card-label">Current Focus</div>
                 <div class="focus-content">
                     <svg viewBox="0 0 48 24" fill="white" style="height: 32px; opacity: 0.9; margin-bottom: 0.8rem;">
@@ -68,27 +67,31 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                 <div class="glow-effect"></div>
             </div>
 
-            <div class="bento-card timeline-card" style="grid-area: timeline;">
-                <div class="card-header-row">
-                    <div class="card-label">Career Velocity</div>
-                </div>
-                <div class="timeline-grid">
-                    {experience.slice(0, 4).map(job => (
-                        <div class="mini-job-card" style={`--job-accent: ${job.color}`}>
-                            <div class="company-name" style={`color: ${job.color}`}>{job.company}</div>
-                            <div class="role-name">{job.role}</div>
-                            <div class="job-highlight">{job.highlight}</div>
-                        </div>
-                    ))}
-                    <div class="mini-job-card" style="--job-accent: #666">
-                        <div class="company-name" style="color: #888">Radware, Wipro...</div>
-                        <div class="role-name">Previous Roles</div>
-                        <div class="job-highlight">Foundational experience in Network Security & Presales.</div>
+        </div>
+
+        <div class="bento-card timeline-card">
+            <div class="card-header-row">
+                <div class="card-label">Career Velocity</div>
+            </div>
+            <div class="timeline-grid">
+                {experience.slice(0, 4).map(job => (
+                    <div class="mini-job-card" style={`--job-accent: ${job.color}`}>
+                        <div class="company-name" style={`color: ${job.color}`}>{job.company}</div>
+                        <div class="role-name">{job.role}</div>
+                        <div class="job-highlight">{job.highlight}</div>
                     </div>
+                ))}
+                <div class="mini-job-card" style="--job-accent: #666">
+                    <div class="company-name" style="color: #888">Radware, Wipro...</div>
+                    <div class="role-name">Previous Roles</div>
+                    <div class="job-highlight">Foundational experience in Network Security & Presales.</div>
                 </div>
             </div>
+        </div>
 
-            <div class="bento-card skills-card" style="grid-area: skills;">
+        <div class="grid-row-bottom">
+            
+            <div class="bento-card skills-card">
                 <div class="card-label">Expertise Toolkit</div>
                 <div class="skills-wrapper">
                     {skills.map(skill => (
@@ -97,7 +100,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                 </div>
             </div>
 
-            <div class="bento-card certs-card" style="grid-area: certs;">
+            <div class="bento-card certs-card">
                 <div class="card-label">Credentials & Education</div>
                 <ul class="cert-list">
                     <li>BITS Pilani (BS Info Systems)</li>
@@ -105,7 +108,9 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
                 </ul>
             </div>
 
-        </div> </main>
+        </div>
+
+	</main>
     
     <div id="toast" class="toast">Email copied to clipboard!</div>
 
@@ -115,11 +120,9 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
 </Layout>
 
 <script>
-    // Copy Email Script
     const btn = document.getElementById('copyEmailBtn');
     const toast = document.getElementById('toast');
     const email = "tharun@tharunraj.co.in";
-
     if (btn && toast) {
         btn.addEventListener('click', () => {
             navigator.clipboard.writeText(email).then(() => {
@@ -131,7 +134,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
 </script>
 
 <style>
-    /* --- CSS VARIABLES & GLOBAL --- */
+    /* --- VARIABLES --- */
     :root {
         --bg-main: #050505;
         --card-bg: rgba(20, 20, 20, 0.7);
@@ -141,8 +144,9 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         --accent-glow: rgba(136, 58, 234, 0.3);
     }
 
-    /* --- LAYOUT GRID --- */
-    .container {
+    /* --- MAIN LAYOUT (FLEX COLUMN) --- */
+    /* This forces rows to stack vertically, preventing overlap */
+    .main-wrapper {
         max-width: 1400px;
         margin: 0 auto;
         padding: 2rem;
@@ -150,23 +154,25 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-
-    /* THE BENTO GRID LAYOUT ENGINE */
-    .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        /* Defined rows to prevent overlap */
-        grid-template-rows: auto auto auto; 
-        grid-template-areas: 
-            "hero hero hero focus"
-            "timeline timeline timeline timeline"
-            "skills skills certs certs";
-        gap: 2rem; /* Increased gap for better separation */
+        gap: 2rem; /* Vertical space between rows */
         width: 100%;
     }
 
-    /* --- BENTO CARD STYLES --- */
+    /* --- ROW 1: GRID (3:1) --- */
+    .grid-row-top {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+    }
+
+    /* --- ROW 3: GRID (1:1) --- */
+    .grid-row-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    /* --- CARD BASE --- */
     .bento-card {
         background: var(--card-bg);
         border: 1px solid var(--card-border);
@@ -174,18 +180,14 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         padding: 2rem;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        box-shadow: 0 4px 24px -1px rgba(0,0,0,0.2);
         display: flex;
         flex-direction: column;
-        /* Force cards to fill the grid cell, preventing overlap */
-        height: 100%; 
     }
     .bento-card:hover {
         border-color: rgba(255, 255, 255, 0.2);
-        transform: translateY(-4px) scale(1.005);
-        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.4);
+        transform: translateY(-4px);
         z-index: 2;
     }
     .card-label {
@@ -193,11 +195,13 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         color: var(--text-secondary); margin-bottom: 1.5rem; font-weight: 600;
     }
 
-    /* --- HERO CARD (Area 1) --- */
+    /* --- HERO CARD --- */
     .hero-card {
-        flex-direction: row; align-items: center; justify-content: space-between;
         background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,50,0.8));
-        min-height: 350px; /* Ensure specific height for Hero */
+        min-height: 350px;
+        flex-direction: row; 
+        align-items: center; 
+        justify-content: space-between;
     }
     .hero-content { max-width: 55%; z-index: 2; position: relative;}
     .badge { display: inline-block; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1); }
@@ -207,7 +211,6 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     
     .hero-image-container {
         position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
-        /* Adjusted mask to ensure content text is readable */
         mask-image: linear-gradient(to left, black 20%, transparent 100%); 
         -webkit-mask-image: linear-gradient(to left, black 20%, transparent 100%);
         pointer-events: none;
@@ -216,86 +219,60 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
 
     /* HERO BUTTONS */
     .cta-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.5rem; }
-    .btn {
-        padding: 0.8rem 1.2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem; cursor: pointer;
-        display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; text-decoration: none; border: 1px solid transparent;
-    }
+    .btn { padding: 0.8rem 1.2rem; border-radius: 12px; font-weight: 600; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s; text-decoration: none; border: 1px solid transparent; }
     .btn-primary { background: linear-gradient(to bottom right, #eee, #ccc); color: #000; }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -10px rgba(255,255,255,0.5); }
     .btn-secondary { background: rgba(255, 255, 255, 0.05); color: #fff; border-color: rgba(255, 255, 255, 0.1); }
-    .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-3px); border-color: rgba(255, 255, 255, 0.3); }
+    .btn:hover { transform: translateY(-3px); }
 
-    /* --- FOCUS CARD (Area 2) --- */
+    /* --- FOCUS CARD --- */
     .focus-card { 
         background: linear-gradient(160deg, var(--card-bg), rgba(246, 130, 31, 0.15)); 
-        justify-content: center; align-items: flex-start;
-        /* Match hero min-height */
-        min-height: 350px; 
+        min-height: 350px;
     }
     .focus-content h3 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
     .focus-content p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
     .glow-effect { position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; background: var(--accent); filter: blur(60px); opacity: 0.4; }
 
-    /* --- TIMELINE CARD (Area 3) --- */
-    .timeline-card { min-height: 250px; }
-    .card-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-    .timeline-grid { 
-        display: grid; 
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-        gap: 1rem; 
-        width: 100%;
-        height: 100%;
-    }
+    /* --- TIMELINE CARD --- */
+    .timeline-card { width: 100%; }
+    .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
     .mini-job-card { 
         padding: 1.2rem; 
         background: rgba(0,0,0,0.2); 
         border-radius: 12px; 
         border-left: 3px solid var(--job-accent); 
         transition: all 0.2s; 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        display: flex; flex-direction: column; justify-content: space-between;
+        min-height: 140px;
     }
     .mini-job-card:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
     .company-name { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.3rem; }
     .role-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
     .job-highlight { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
 
-    /* --- SKILLS CARD (Area 4) --- */
-    .skills-card { justify-content: flex-start; }
-    .skills-wrapper { display: flex; flex-wrap: wrap; gap: 0.6rem; align-content: flex-start; }
-    
-    /* Unified Skill Styling */
+    /* --- SKILLS CARD --- */
+    .skills-card { height: 100%; }
+    .skills-wrapper { display: flex; flex-wrap: wrap; gap: 0.8rem; align-content: flex-start; }
     .skill-pill { 
         padding: 0.6rem 1rem; 
         background: rgba(255,255,255,0.03); 
-        border-radius: 8px; 
-        font-size: 0.9rem; 
-        color: #ddd;
+        border-radius: 8px; font-size: 0.9rem; color: #ddd;
         border: 1px solid var(--card-border); 
         transition: all 0.2s; 
     }
-    .skill-pill:hover { 
-        background: rgba(255,255,255,0.1); 
-        transform: translateY(-2px); 
-        border-color: rgba(255,255,255,0.4); 
-        color: #fff;
-    }
+    .skill-pill:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); border-color: #fff; color: #fff; }
 
-    /* --- CERTS CARD (Area 5) --- */
-    .certs-card { justify-content: flex-start; }
-    .cert-list { 
-        list-style: none; padding: 0; margin: 0; 
-        display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; 
-    }
+    /* --- CERTS CARD --- */
+    .certs-card { height: 100%; }
+    .cert-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .cert-list li { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.95rem; }
     .cert-list li::before { content: '🏆'; font-size: 1.1rem; }
 
     /* --- UTILITIES --- */
-    .toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 50px; padding: 16px; position: fixed; z-index: 100; left: 50%; bottom: 30px; transform: translateX(-50%); border: 1px solid rgba(255,255,255,0.1); opacity: 0; transition: opacity 0.5s, bottom 0.5s; }
+    .toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 50px; padding: 16px; position: fixed; z-index: 100; left: 50%; bottom: 30px; transform: translateX(-50%); opacity: 0; transition: opacity 0.5s, bottom 0.5s; }
     .toast.show { visibility: visible; opacity: 1; bottom: 50px; }
     
-    footer { text-align: center; padding: 3rem 0; color: var(--text-secondary); font-size: 0.85rem; width: 100%; margin-top: 1rem;}
+    footer { text-align: center; padding: 3rem 0; color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;}
     footer a { color: #F6821F; text-decoration: none; border-bottom: 1px dotted #F6821F; transition: all 0.2s;}
     footer a:hover { color: #fff; border-bottom-style: solid;}
 
@@ -308,18 +285,13 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
 
     /* --- RESPONSIVE --- */
     @media (max-width: 1024px) {
-        .container { padding: 1rem; height: auto; display: block;}
-        .bento-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+        .main-wrapper { display: flex; flex-direction: column; gap: 1.5rem; }
+        .grid-row-top, .grid-row-bottom { display: flex; flex-direction: column; gap: 1.5rem; }
         .hero-card { flex-direction: column-reverse; padding: 0; overflow: hidden; min-height: auto; }
         .hero-image-container { position: relative; width: 100%; height: 300px; mask-image: none; -webkit-mask-image: none; }
         .hero-content { max-width: 100%; padding: 2rem; }
         h1 { font-size: 2.5rem; }
         .cta-row { justify-content: flex-start; }
-        .bento-card { padding: 1.5rem; min-height: auto; }
         .cert-list { grid-template-columns: 1fr; }
         .timeline-grid { grid-template-columns: 1fr; }
     }
