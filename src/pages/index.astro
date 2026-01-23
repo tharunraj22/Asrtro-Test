@@ -55,11 +55,11 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         <div class="bento-card focus-card" style="grid-area: focus; --accent: #F6821F;">
             <div class="card-label">Current Focus</div>
             <div class="focus-content">
-                <svg viewBox="0 0 48 24" fill="white" style="height: 40px; opacity: 0.9; margin-bottom: 1rem;">
+                <svg viewBox="0 0 48 24" fill="white" style="height: 32px; opacity: 0.9; margin-bottom: 0.8rem;">
                     <path d="M34.6 10.6c-0.6-2.6-3.2-4.6-6.1-4.6 -1.8 0-3.5 0.8-4.7 2.1C23 4 19.3 4 16.5 6.3c-2.6-1.5-6-0.8-7.7 1.7c-0.1 0.2-0.3 0.4-0.4 0.6C3.9 9 0 12.3 0 16.8C0 20.8 3.2 24 7.2 24h27.4c4 0 7.2-3.2 7.2-7.2 C41.8 13.2 38.8 10.6 34.6 10.6z"/>
                 </svg>
                 <h3>Senior Solutions Engineer</h3>
-                <p>Evangelizing Zero Trust and Edge Computing architectures. Building the technical footprint in India.</p>
+                <p>Evangelizing Zero Trust. Building the technical footprint in India.</p>
             </div>
             <div class="glow-effect"></div>
         </div>
@@ -102,7 +102,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     <div id="toast" class="toast">Email copied to clipboard!</div>
 
     <footer>
-        <p>&copy; {new Date().getFullYear()} Built by Tharun with <a href="https://astro.build" target="_blank">Astro</a> on Cloudflare Pages.</p>
+        <p>&copy; 2026 Built by Tharun with <a href="https://astro.build" target="_blank">Astro</a> on Cloudflare Pages.</p>
     </footer>
 </Layout>
 
@@ -152,13 +152,12 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         grid-template-rows: auto auto auto;
         gap: 1.5rem;
         width: 100%;
-        /* UPDATED LAYOUT:
-           Row 1: Hero (2 cols) | Focus (2 cols) -> Equal Widths
-           Row 2: Skills (1 col) | Timeline (3 cols)
-           Row 3: Skills (1 col) | Certs (3 cols) -> Replaces Photo
+        /* UPDATED LAYOUT (75% / 25%)
+           "hero" spans 3 columns (75%)
+           "focus" spans 1 column (25%)
         */
         grid-template-areas: 
-            "hero hero focus focus"
+            "hero hero hero focus"
             "skills timeline timeline timeline"
             "skills certs certs certs";
     }
@@ -193,15 +192,15 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
         flex-direction: row; align-items: center; justify-content: space-between;
         background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(40,40,50,0.8));
     }
-    .hero-content { max-width: 55%; z-index: 2; }
+    .hero-content { max-width: 65%; z-index: 2; }
     .badge { display: inline-block; padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-size: 0.8rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1); }
     h1 { font-size: 3rem; margin: 0; font-weight: 800; letter-spacing: -1px; background: linear-gradient(to right, #fff, #ccc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     h2 { font-size: 1.25rem; color: #F6821F; margin: 0.5rem 0 1.5rem 0; font-weight: 500; }
-    .hero-card p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; max-width: 95%; line-height: 1.6; }
+    .hero-card p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; max-width: 90%; line-height: 1.6; }
     
     .hero-image-container {
-        position: absolute; right: 0; top: 0; bottom: 0; width: 45%;
-        mask-image: linear-gradient(to left, black 30%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 30%, transparent 100%);
+        position: absolute; right: 0; top: 0; bottom: 0; width: 35%;
+        mask-image: linear-gradient(to left, black 20%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 20%, transparent 100%);
     }
     .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center top;}
 
@@ -223,8 +222,8 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
 
     /* --- FOCUS CARD (Area 2) --- */
     .focus-card { background: linear-gradient(160deg, var(--card-bg), rgba(246, 130, 31, 0.15)); justify-content: center; align-items: flex-start;}
-    .focus-content h3 { font-size: 1.4rem; margin: 0 0 0.5rem 0; }
-    .focus-content p { color: var(--text-secondary); font-size: 0.95rem; max-width: 90%; }
+    .focus-content h3 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
+    .focus-content p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
     .glow-effect { position: absolute; bottom: 0; right: 0; width: 100px; height: 100px; background: var(--accent); filter: blur(60px); opacity: 0.4; }
 
     /* --- SKILLS CARD (Area 3) --- */
@@ -244,8 +243,7 @@ const certs = ["Oracle Cloud Certified Associate", "Radware IAS Engineer", "F5 P
     .role-name { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
     .job-highlight { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.4; }
 
-    /* --- CERTS CARD (Area 5 - Expanded) --- */
-    /* Now updated to be a grid list since it's wider */
+    /* --- CERTS CARD (Area 5) --- */
     .cert-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .cert-list li { display: flex; align-items: center; gap: 10px; color: var(--text-secondary); font-size: 0.95rem; }
     .cert-list li::before { content: '🏆'; font-size: 1.1rem; }
